@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title color="primary">button</ion-title>
+
+    <!--END toolbar-->
+
+    <ion-buttons slot="end">
+      <ion-button (click)="onClick()" color="danger">
+        <ion-icon slot="icon-only" 
+                  [name]= " favorite ? 'heart' : 'heart-outline' ">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+<ion-button color="secondary">1 Default</ion-button>
+<ion-button [disabled]="true">2 Disabled</ion-button>
+
+<ion-button color="tertiary" expand="block">3 Block</ion-button>
+<ion-button expand="full">4 Full</ion-button>
+
+<ion-button color="success">5 Default</ion-button>
+<ion-button shape="round">6 Round</ion-button>
+
+<ion-button color="warning">7 Default</ion-button>
+<ion-button color="danger" fill="clear">8 Clear</ion-button>
+<ion-button color="danger" fill="outline">9 Outline</ion-button>
+<ion-button color="medium" fill="solid">10 Solid</ion-button>
+
+<ion-button color="dark" size="small">11 Small</ion-button>
+<ion-button size="default">12 Default</ion-button>
+<ion-button size="large">13 Large</ion-button>
+
+<ion-button>Default</ion-button>
+<ion-button color="primary">Primary</ion-button>
+<ion-button color="secondary">Secondary</ion-button>
+<ion-button color="tertiary">Tertiary</ion-button>
+<ion-button color="success">Success</ion-button>
+<ion-button color="warning">Warning</ion-button>
+<ion-button color="danger">Danger</ion-button>
+<ion-button color="light">Light</ion-button>
+<ion-button color="medium">Medium</ion-button>
+<ion-button color="dark">Dark</ion-button>
+
+ </ion-content>

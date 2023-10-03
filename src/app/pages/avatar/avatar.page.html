@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button 
+          defaultHref="/"
+          text="Regresar"
+          color="primary"
+          >
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">avatar</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <!-- <img src="/assets/LicoSinu.jpg" />  -->
+        <img src="/assets/LicoSinu.jpg" alt="">
+      </ion-avatar>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-chip color="primary"  outline="true">
+    <ion-avatar>
+      <img src="/assets/LicoSinu.jpg" />
+    </ion-avatar>
+    <ion-label>LicoSinu</ion-label>
+  </ion-chip>
+
+  <ion-list>
+    <ion-item *ngFor="let i of [1,1]">
+      <ion-avatar slot="end">
+        <img src="/assets/LicoSinu.jpg" />
+      </ion-avatar>
+      <ion-label>LicoSinu</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
