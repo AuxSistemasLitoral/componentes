@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="Regresar" color="primary">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">list-Reorder</ion-title>
+    <ion-button (click)="toggleReorder()" slot="end" nam> Toggle </ion-button>
+    
+  </ion-toolbar>
+ 
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-reorder-group [disabled]="isDisabled"
+                        (ionItemReorder)="doReorder($any($event))">
+      <ion-item *ngFor="let proveedor of proveedores">
+        <ion-reorder slot="end">
+          <ion-icon name="pizza"></ion-icon>
+        </ion-reorder>
+        <ion-label>{{proveedor}}</ion-label>
+        <!-- <ion-reorder slot="end"></ion-reorder> -->
+      </ion-item>
+
+    </ion-reorder-group>
+
+  </ion-list>
+
+</ion-content>

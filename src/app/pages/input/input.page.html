@@ -1,0 +1,186 @@
+<app-header [titulo]="nombre || 'Input Forms'"></app-header>
+
+<ion-content class="ion-padding">
+
+  <!-- <ion-list>
+    <ion-item>
+      <ion-label>Default input</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Input with placeholder</ion-label>
+      <ion-input placeholder="Enter company name"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Input with value</ion-label>
+      <ion-input value="121 S Pinckney St #300"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Readonly input</ion-label>
+      <ion-input value="Madison" [readonly]="true"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Disabled input</ion-label>
+      <ion-input value="53703" [disabled]="true"></ion-input>
+    </ion-item>
+  </ion-list>
+   -->
+
+   <!-- <ion-list>
+    <ion-item>
+      <ion-label>Text input</ion-label>
+      <ion-input placeholder="Enter text"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Number input</ion-label>
+      <ion-input type="number" placeholder="000"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Password input</ion-label>
+      <ion-input type="password" value="password"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Email input</ion-label>
+      <ion-input type="email" placeholder="email@domain.com"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Telephone input</ion-label>
+      <ion-input type="tel" placeholder="888-888-8888"></ion-input>
+    </ion-item>
+  </ion-list> -->
+
+
+  <!-- <ion-list>
+    <ion-item>
+      <ion-label>Default label</ion-label>
+      <ion-input placeholder="Enter text"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="fixed">Fixed label</ion-label>
+      <ion-input placeholder="Enter text"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="stacked">Stacked label</ion-label>
+      <ion-input placeholder="Enter text"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Floating label</ion-label>
+      <ion-input placeholder="Enter text"></ion-input>
+    </ion-item>
+  </ion-list> -->
+
+  <!-- <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Input with clear button</ion-label>
+      <ion-input [clearInput]="true" placeholder="Enter text to see clear button" value="Default value"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="stacked">Input with clear on edit</ion-label>
+      <ion-input [clearOnEdit]="true" placeholder="Enter text, leave the input, come back and type to clear"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="stacked">Password input</ion-label>
+      <ion-input type="password" placeholder="Enter text, leave the input, come back and type to clear"></ion-input>
+    </ion-item>
+  </ion-list> -->
+
+  <!-- <ion-item>
+    <ion-label position="floating">Default input</ion-label>
+    <ion-input placeholder="Enter text"></ion-input>
+  </ion-item>
+  
+  <ion-item fill="solid">
+    <ion-label position="floating">Solid input</ion-label>
+    <ion-input placeholder="Enter text"></ion-input>
+  </ion-item>
+  
+  <ion-item fill="outline">
+    <ion-label position="floating">Outline input</ion-label>
+    <ion-input placeholder="Enter text"></ion-input>
+  </ion-item> -->
+
+  <!-- <ion-item fill="solid">
+    <ion-label position="floating">Email</ion-label>
+    <ion-input type="email" ngModel email></ion-input>
+    <ion-note slot="helper">Enter a valid email</ion-note>
+    <ion-note slot="error">Invalid email</ion-note>
+  </ion-item> -->
+  <ion-list>
+  <ion-list-header>
+    <ion-label>Input Normal</ion-label>
+  </ion-list-header>
+
+  <ion-item>
+    <ion-item>
+      <ion-label>Nombre: </ion-label>
+      <ion-input type="text" placeholder="Ingrese el nombre" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+  </ion-item>
+
+
+
+  <!-- <ion-item>
+    <ion-label position="floating">Floating label</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Floating label</ion-label>
+    <ion-input placeholder="Enter text"></ion-input>
+  </ion-item> -->
+<!-- los dos items anteriores funcionan de formas diferentes con el y sin el 
+     placeholder haciendo flotante o no    -->
+</ion-list>
+
+<form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
+  <ion-list-header>
+    <ion-label>Formulario Valido: {{formulario.valid}}</ion-label> 
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-input type="email" 
+               placeholder="Email"
+               name="email"
+               [(ngModel)]="usuario.email"
+               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+               required=""
+               >
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Password</ion-label>
+    <ion-input type="password" 
+               name="password"
+               [(ngModel)]="usuario.password"
+               pattern = "^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"
+               required=""
+               placeholder="Contraseña"
+               ></ion-input>    
+  </ion-item>
+  <ion-note slot="helper">La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
+    Puede tener otros símbolos.</ion-note>
+
+
+  <ion-button  [disabled]="formulario.invalid"
+               type="submit" expand="block">
+    Login
+  </ion-button>
+
+</form>
+
+</ion-content>
